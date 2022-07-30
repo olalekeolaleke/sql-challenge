@@ -58,7 +58,7 @@ WHERE dept_name IN ('Sales', 'Development');
 ---- the frequency count of employee last names in descending order
 
 SELECT employees.last_name, 
-COUNT(DISTINCT employees.last_name) AS "Last Name Count" 
+COUNT (employees.last_name) AS "Last Name Count" 
 FROM employees 
 GROUP BY employees.last_name 
 ORDER BY "Last Name Count" DESC;
