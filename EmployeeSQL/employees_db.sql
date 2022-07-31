@@ -1,4 +1,4 @@
---- requesting the employee number, last name, first name, sex, and salary
+--- requesting each employee's: employee number, last name, first name, sex, and salary
 
 SELECT employees.emp_no AS "Employees number", last_name, sex, salary
 FROM employees, salary 
@@ -11,7 +11,7 @@ SELECT first_name, last_name, hire_date
 FROM employees
 WHERE hire_date = TO_DATE('1986%', 'YYYY-MM-DD');
 
---- requesting the department number, department name, 
+--- requesting each department manager's: department number, department name, 
 --- the manager's employee number, last name, first name
  
 SELECT dept_manager.dept_no AS "Department number", dept_name AS "Department name", dept_manager.emp_no AS "Managers' Emp. number", last_name, first_name
@@ -19,7 +19,8 @@ FROM dept_manager
 INNER JOIN employees on dept_manager.emp_no = employees.emp_no
 INNER JOIN departments on dept_manager.dept_no = departments.dept_no;
 
----- requesting all the employee number, last name, first name, and department name
+---- requesting the department of each employee with their employee number, 
+---- last name, first name, and department name
  
 SELECT dept_emp.emp_no AS "Employees number", last_name, first_name, dept_name
 FROM dept_emp
